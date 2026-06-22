@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { useI18n } from '@/lib/i18n/context';
+import FacebookIcon from '@/components/icons/FacebookIcon';
+import LineIcon from '@/components/icons/LineIcon';
 
 export default function FloatingButtons() {
   const { t } = useI18n();
@@ -34,6 +36,20 @@ export default function FloatingButtons() {
           transition={{ duration: 0.3 }}
           className="fixed bottom-6 right-6 z-50 flex flex-col gap-3"
         >
+          {/* Facebook */}
+          <motion.a
+            href="https://facebook.com/meritacctax"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            className="flex items-center gap-2 px-4 py-3 rounded-full bg-[#1877F2] text-white text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl"
+            aria-label="Contact via Facebook"
+          >
+            <FacebookIcon className="w-4 h-4" />
+            <span className="hidden sm:inline">{t.floating.facebook}</span>
+          </motion.a>
+
           {/* LINE */}
           <motion.a
             href="https://lin.ee/cNEUD0p"
@@ -44,7 +60,7 @@ export default function FloatingButtons() {
             className="flex items-center gap-2 px-4 py-3 rounded-full bg-[#00b900] text-white text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl"
             aria-label="Contact via LINE"
           >
-            <span className="font-bold text-xs">LINE</span>
+            <LineIcon className="w-4 h-4" />
             <span className="hidden sm:inline">{t.floating.line}</span>
           </motion.a>
 

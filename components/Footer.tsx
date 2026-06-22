@@ -1,7 +1,9 @@
 'use client';
 
 import { useI18n } from '@/lib/i18n/context';
-import { Phone, Mail, ExternalLink } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
+import FacebookIcon from '@/components/icons/FacebookIcon';
+import LineIcon from '@/components/icons/LineIcon';
 
 const NAV_LINKS = [
   { key: 'services' as const, href: '#services' },
@@ -87,7 +89,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
                 style={{ color: 'var(--muted-foreground)' }}
               >
-                <ExternalLink size={14} className="text-[#0a66c2]" />
+                <FacebookIcon className="w-3.5 h-3.5 text-[#1877F2]" />
                 Facebook
               </a>
               <a
@@ -97,9 +99,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
                 style={{ color: 'var(--muted-foreground)' }}
               >
-                <span className="font-black text-xs w-3.5 text-center text-[#00b900]">
-                  L
-                </span>
+                <LineIcon className="w-3.5 h-3.5 text-[#00b900]" />
                 LINE Official
               </a>
             </div>

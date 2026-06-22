@@ -219,5 +219,6 @@ export const th: Dict = {
   floating: {
     call: 'โทรเลย',
     line: 'LINE',
+    facebook: 'Facebook',
   },
 };

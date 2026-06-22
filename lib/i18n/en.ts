@@ -224,5 +224,6 @@ export const en: Dict = {
   floating: {
     call: 'Call',
     line: 'LINE',
+    facebook: 'Facebook',
   },
 };

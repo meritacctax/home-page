@@ -117,5 +117,6 @@ export interface Dict {
   floating: {
     call: string;
     line: string;
+    facebook: string;
   };
 }
