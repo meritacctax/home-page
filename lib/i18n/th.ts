@@ -193,7 +193,7 @@ export const th: Dict = {
     },
     info: {
       title: 'ข้อมูลติดต่อ',
-      phones: ['082-498-9442', '063-874-4562'],
+      phones: ['082-498-9442', '062-629-9971'],
       email: 'merit.acctax@gmail.com',
       lineLabel: 'LINE Official',
       fbLabel: 'Facebook',
