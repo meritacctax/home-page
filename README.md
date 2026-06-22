@@ -26,7 +26,7 @@ npm run dev
 
 รันที่ port อื่น (กรณีชั่วคราว):
 ```bash
-npx next dev -p 3007
+npx next dev -p 3100
 ```
 
 ---
