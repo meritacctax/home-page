@@ -1,0 +1,9 @@
+{
+  "images": {},
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "preview": false
+    }
+  }
+}
