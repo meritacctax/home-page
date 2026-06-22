@@ -63,11 +63,6 @@ export const en: Dict = {
         desc: "Register employers and employees with the Social Security Office.",
       },
       {
-        icon: "FileCheck",
-        title: "Business License Applications",
-        desc: "Handle applications for various business licenses and permits.",
-      },
-      {
         icon: "XCircle",
         title: "Company Dissolution",
         desc: "Full dissolution services for companies and partnerships — nationwide.",
