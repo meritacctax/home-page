@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MERIT ACC TAX — meritacctax.com
+
+เว็บไซต์บริษัทสำนักงานบัญชี สร้างด้วย Next.js 16 + Tailwind CSS + framer-motion
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด [http://localhost:3100](http://localhost:3100) ในเบราว์เซอร์
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | Description |
+|---|---|
+| `npm run dev` | Dev server at port 3100 |
+| `npm run build` | Production build |
+| `npm run start` | Start production server at port 3100 |
+| `npm run lint` | Run ESLint |
 
-To learn more about Next.js, take a look at the following resources:
+รันที่ port อื่น (กรณีชั่วคราว):
+```bash
+npx next dev -p 3007
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Stack
 
-## Deploy on Vercel
+- **Framework:** Next.js 16 (App Router) + TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animation:** framer-motion
+- **Icons:** lucide-react
+- **Fonts:** IBM Plex Sans Thai + Inter
+- **Deploy:** Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## i18n
+
+สลับภาษา TH/EN แบบ client-side (ไม่ reload) — ผ่านปุ่มใน Navbar
+
+- Dictionary: `lib/i18n/th.ts` / `lib/i18n/en.ts`
+- Interface: `lib/i18n/types.ts`
+- Context/hook: `lib/i18n/context.tsx` → `useI18n()`
+
+---
+
+## Contact Form
+
+ฟอร์มใน `components/Contact.tsx` ยังไม่มี backend — ใช้ `mailto:` fallback ไปก่อน
+
+**TODO:** เชื่อม API route หรือ LINE Notify / email service
+
+---
+
+## OG / Social Share
+
+- OG image: `app/opengraph-image.tsx` (edge runtime, gen แบบ dynamic)
+- ทดสอบ: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug)
+- ทดสอบหลายแพลตฟอร์ม: opengraph.xyz
+
+---
+
+## Deploy
+
+```bash
+npm run build
+# push to main branch → Vercel auto-deploy
+```
+
+ตั้งค่า environment variables ใน Vercel Dashboard ถ้าเพิ่ม API keys ภายหลัง
