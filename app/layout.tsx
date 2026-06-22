@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n/context";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -149,6 +150,7 @@ export default function RootLayout({
         }}
       >
         <I18nProvider>{children}</I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
