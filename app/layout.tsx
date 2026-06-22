@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        width: 2500,
+        height: 1266,
         alt: "MERIT ACC TAX สำนักงานบัญชีครบวงจร",
       },
     ],
