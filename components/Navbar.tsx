@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n/context";
 import { motion, AnimatePresence } from "framer-motion";
@@ -46,9 +47,10 @@ export default function Navbar() {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            className="font-bold text-xl tracking-tight text-black select-none"
+            className="flex items-center gap-2 font-bold text-xl tracking-tight text-black select-none"
             style={{ letterSpacing: "-0.02em" }}
           >
+            <Image src="/icon.png" alt="" width={28} height={28} className="rounded-sm" />
             MERIT ACC TAX
           </a>
 
