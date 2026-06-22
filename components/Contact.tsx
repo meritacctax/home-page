@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
-import { useI18n } from "@/lib/i18n/context";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { useI18n } from '@/lib/i18n/context';
 
 interface FormState {
   name: string;
@@ -23,14 +23,14 @@ interface FormErrors {
 export default function Contact() {
   const { t } = useI18n();
   const [form, setForm] = useState<FormState>({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-    message: "",
+    name: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [loading, setLoading] = useState(false);
 
   const validate = (): FormErrors => {
@@ -46,7 +46,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      return;
+    }
     setErrors({});
     setLoading(true);
 
@@ -55,15 +58,15 @@ export default function Contact() {
       const body = [
         `ชื่อ: ${form.name}`,
         `โทร: ${form.phone}`,
-        `อีเมล: ${form.email || "-"}`,
-        `บริการ: ${form.service || "-"}`,
+        `อีเมล: ${form.email || '-'}`,
+        `บริการ: ${form.service || '-'}`,
         `ข้อความ: ${form.message}`,
-      ].join("\n");
+      ].join('\n');
       window.location.href = `mailto:merit.acctax@gmail.com?subject=สอบถามบริการ - ${encodeURIComponent(form.name)}&body=${encodeURIComponent(body)}`;
-      setStatus("success");
-      setForm({ name: "", phone: "", email: "", service: "", message: "" });
+      setStatus('success');
+      setForm({ name: '', phone: '', email: '', service: '', message: '' });
     } catch {
-      setStatus("error");
+      setStatus('error');
     } finally {
       setLoading(false);
     }
@@ -76,16 +79,19 @@ export default function Contact() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.5, ease: "easeOut" as const }}
+          transition={{ duration: 0.5, ease: 'easeOut' as const }}
           className="mb-14"
         >
           <h2
             className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
-            style={{ letterSpacing: "-0.02em" }}
+            style={{ letterSpacing: '-0.02em' }}
           >
             {t.contact.title}
           </h2>
-          <p className="text-lg max-w-xl" style={{ color: "var(--muted-foreground)" }}>
+          <p
+            className="text-lg max-w-xl"
+            style={{ color: 'var(--muted-foreground)' }}
+          >
             {t.contact.subtitle}
           </p>
         </motion.div>
@@ -96,10 +102,14 @@ export default function Contact() {
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: "easeOut" as const }}
+            transition={{ duration: 0.5, ease: 'easeOut' as const }}
             className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="flex flex-col gap-5"
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <Field
                   id="name"
@@ -133,18 +143,30 @@ export default function Contact() {
               />
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium mb-1.5">
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-medium mb-1.5"
+                >
                   {t.contact.form.service}
                 </label>
                 <select
                   id="service"
                   value={form.service}
-                  onChange={(e) => setForm((f) => ({ ...f, service: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black min-h-[44px]"
-                  style={{ borderColor: "var(--border)", background: "var(--background)" }}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, service: e.target.value }))
+                  }
+                  className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black min-h-11"
+                  style={{
+                    borderColor: 'var(--border)',
+                    background: 'var(--background)',
+                  }}
                 >
                   {t.contact.form.serviceOptions.map((opt, i) => (
-                    <option key={i} value={i === 0 ? "" : opt} disabled={i === 0}>
+                    <option
+                      key={i}
+                      value={i === 0 ? '' : opt}
+                      disabled={i === 0}
+                    >
                       {opt}
                     </option>
                   ))}
@@ -152,7 +174,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1.5">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-1.5"
+                >
                   {t.contact.form.message}
                   <span className="ml-0.5 text-red-600">*</span>
                 </label>
@@ -160,22 +185,26 @@ export default function Contact() {
                   id="message"
                   rows={5}
                   value={form.message}
-                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, message: e.target.value }))
+                  }
                   placeholder={t.contact.form.placeholder.message}
                   className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black resize-none"
                   style={{
-                    borderColor: errors.message ? "rgb(220 38 38)" : "var(--border)",
-                    background: "var(--background)",
+                    borderColor: errors.message
+                      ? 'rgb(220 38 38)'
+                      : 'var(--border)',
+                    background: 'var(--background)',
                   }}
                 />
               </div>
 
-              {status === "success" && (
+              {status === 'success' && (
                 <p className="text-sm p-3 rounded-lg border bg-green-50 text-green-800 border-green-200">
                   {t.contact.form.successMsg}
                 </p>
               )}
-              {status === "error" && (
+              {status === 'error' && (
                 <p className="text-sm p-3 rounded-lg border bg-red-50 text-red-800 border-red-200">
                   {t.contact.form.errorMsg}
                 </p>
@@ -184,9 +213,9 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-8 py-3.5 rounded-lg bg-black text-white font-semibold text-base transition-all duration-200 hover:bg-[#1a1a1a] active:scale-[0.98] disabled:opacity-50 min-h-[48px]"
+                className="px-8 py-3.5 rounded-lg bg-black text-white font-semibold text-base transition-all duration-200 hover:bg-[#1a1a1a] active:scale-[0.98] disabled:opacity-50 min-h-12"
               >
-                {loading ? "..." : t.contact.form.submit}
+                {loading ? '...' : t.contact.form.submit}
               </button>
             </form>
           </motion.div>
@@ -196,21 +225,26 @@ export default function Contact() {
             initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" as const }}
+            transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' as const }}
             className="lg:col-span-2 flex flex-col gap-6"
           >
             <div
               className="p-6 rounded-xl border"
-              style={{ borderColor: "var(--border)", background: "var(--muted)" }}
+              style={{
+                borderColor: 'var(--border)',
+                background: 'var(--muted)',
+              }}
             >
-              <h3 className="font-semibold text-base mb-5">{t.contact.info.title}</h3>
+              <h3 className="font-semibold text-base mb-5">
+                {t.contact.info.title}
+              </h3>
               <div className="flex flex-col gap-4">
                 <InfoRow icon={<Phone size={15} />}>
                   <div className="flex flex-col gap-0.5">
                     {t.contact.info.phones.map((p) => (
                       <a
                         key={p}
-                        href={`tel:+66${p.replace(/^0/, "").replace(/-/g, "")}`}
+                        href={`tel:+66${p.replace(/^0/, '').replace(/-/g, '')}`}
                         className="font-medium hover:underline underline-offset-2"
                       >
                         {p}
@@ -228,7 +262,11 @@ export default function Contact() {
                   </a>
                 </InfoRow>
 
-                <InfoRow icon={<span className="font-black text-xs text-[#00b900]">L</span>}>
+                <InfoRow
+                  icon={
+                    <span className="font-black text-xs text-[#00b900]">L</span>
+                  }
+                >
                   <a
                     href="https://lin.ee/cNEUD0p"
                     target="_blank"
@@ -252,23 +290,31 @@ export default function Contact() {
 
                 <InfoRow icon={<Clock size={15} />}>
                   <div>
-                    <div className="text-xs mb-0.5" style={{ color: "var(--muted-foreground)" }}>
+                    <div
+                      className="text-xs mb-0.5"
+                      style={{ color: 'var(--muted-foreground)' }}
+                    >
                       {t.contact.info.hoursLabel}
                     </div>
-                    <div className="font-medium text-sm">{t.contact.info.hours}</div>
+                    <div className="font-medium text-sm">
+                      {t.contact.info.hours}
+                    </div>
                   </div>
                 </InfoRow>
 
                 <InfoRow icon={<MapPin size={15} />}>
                   <div>
-                    <div className="text-xs mb-0.5" style={{ color: "var(--muted-foreground)" }}>
+                    <div
+                      className="text-xs mb-0.5"
+                      style={{ color: 'var(--muted-foreground)' }}
+                    >
                       {t.contact.info.addressLabel}
                     </div>
                     <div className="text-sm leading-relaxed">
                       {t.contact.info.address}
                       <span
                         className="block text-xs mt-0.5"
-                        style={{ color: "var(--muted-foreground)" }}
+                        style={{ color: 'var(--muted-foreground)' }}
                       >
                         {t.contact.info.addressNote}
                       </span>
@@ -281,7 +327,7 @@ export default function Contact() {
             {/* Google Maps */}
             <div
               className="rounded-xl overflow-hidden border"
-              style={{ borderColor: "var(--border)" }}
+              style={{ borderColor: 'var(--border)' }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d576.4278531485197!2d100.76108487919717!3d13.613361141154034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5d6fb7290a79%3A0x3b6fd916958cb6be!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4oeC4reC4o-C4tOC4lyDguYHguK3guIQg4LmB4LiX4LiB4LiL4LmMIOC4iOC4s-C4geC4seC4lA!5e0!3m2!1sth!2sth!4v1782122348191!5m2!1sth!2sth"
@@ -305,7 +351,7 @@ function Field({
   id,
   label,
   placeholder,
-  type = "text",
+  type = 'text',
   value,
   onChange,
   error,
@@ -332,22 +378,28 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black min-h-[44px]"
+        className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black min-h-11"
         style={{
-          borderColor: error ? "rgb(220 38 38)" : "var(--border)",
-          background: "var(--background)",
+          borderColor: error ? 'rgb(220 38 38)' : 'var(--border)',
+          background: 'var(--background)',
         }}
       />
     </div>
   );
 }
 
-function InfoRow({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
+function InfoRow({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex gap-3 items-start">
       <div
-        className="mt-0.5 flex-shrink-0 w-7 h-7 rounded-md flex items-center justify-center bg-white border"
-        style={{ borderColor: "var(--border)" }}
+        className="mt-0.5 shrink-0 w-7 h-7 rounded-md flex items-center justify-center bg-white border"
+        style={{ borderColor: 'var(--border)' }}
       >
         {icon}
       </div>

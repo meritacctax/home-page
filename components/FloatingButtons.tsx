@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Phone } from "lucide-react";
-import { useI18n } from "@/lib/i18n/context";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Phone } from 'lucide-react';
+import { useI18n } from '@/lib/i18n/context';
 
 export default function FloatingButtons() {
   const { t } = useI18n();
@@ -11,14 +11,17 @@ export default function FloatingButtons() {
 
   useEffect(() => {
     const onScroll = () => {
-      const hero = document.querySelector("section");
+      const hero = document.querySelector('section');
       if (!hero) return;
-      setVisible(window.scrollY > hero.getBoundingClientRect().height + window.scrollY * 0 + 200);
+      setVisible(
+        window.scrollY >
+          hero.getBoundingClientRect().height + window.scrollY * 0 + 200,
+      );
     };
     // Simple: show after 400px scroll
     const check = () => setVisible(window.scrollY > 400);
-    window.addEventListener("scroll", check, { passive: true });
-    return () => window.removeEventListener("scroll", check);
+    window.addEventListener('scroll', check, { passive: true });
+    return () => window.removeEventListener('scroll', check);
   }, []);
 
   return (
@@ -51,7 +54,7 @@ export default function FloatingButtons() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="flex items-center gap-2 px-4 py-3 rounded-full bg-white border text-black text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl"
-            style={{ borderColor: "var(--border)" }}
+            style={{ borderColor: 'var(--border)' }}
             aria-label="Call MERIT ACC TAX"
           >
             <Phone size={16} />
