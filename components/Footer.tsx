@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useI18n } from "@/lib/i18n/context";
-import { Phone, Mail, ExternalLink } from "lucide-react";
+import { useI18n } from '@/lib/i18n/context';
+import { Phone, Mail, ExternalLink } from 'lucide-react';
 
 const NAV_LINKS = [
-  { key: "services" as const, href: "#services" },
-  { key: "why" as const, href: "#why" },
-  { key: "industries" as const, href: "#industries" },
-  { key: "process" as const, href: "#process" },
-  { key: "contact" as const, href: "#contact" },
+  { key: 'services' as const, href: '#services' },
+  { key: 'why' as const, href: '#why' },
+  { key: 'industries' as const, href: '#industries' },
+  { key: 'process' as const, href: '#process' },
+  { key: 'contact' as const, href: '#contact' },
 ];
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer
       className="py-16 border-t"
-      style={{ borderColor: "var(--border)", background: "var(--muted)" }}
+      style={{ borderColor: 'var(--border)', background: 'var(--muted)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -25,11 +25,14 @@ export default function Footer() {
           <div>
             <div
               className="font-bold text-xl tracking-tight mb-3"
-              style={{ letterSpacing: "-0.02em" }}
+              style={{ letterSpacing: '-0.02em' }}
             >
               MERIT ACC TAX
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: 'var(--muted-foreground)' }}
+            >
               {t.footer.tagline}
             </p>
           </div>
@@ -46,10 +49,10 @@ export default function Footer() {
                     e.preventDefault();
                     document
                       .querySelector(link.href)
-                      ?.scrollIntoView({ behavior: "smooth" });
+                      ?.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="text-sm transition-colors hover:text-black"
-                  style={{ color: "var(--muted-foreground)" }}
+                  style={{ color: 'var(--muted-foreground)' }}
                 >
                   {t.footer.links[link.key]}
                 </a>
@@ -64,7 +67,7 @@ export default function Footer() {
               <a
                 href="tel:+66824989442"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
-                style={{ color: "var(--muted-foreground)" }}
+                style={{ color: 'var(--muted-foreground)' }}
               >
                 <Phone size={14} />
                 082-498-9442
@@ -72,7 +75,7 @@ export default function Footer() {
               <a
                 href="mailto:merit.acctax@gmail.com"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
-                style={{ color: "var(--muted-foreground)" }}
+                style={{ color: 'var(--muted-foreground)' }}
               >
                 <Mail size={14} />
                 merit.acctax@gmail.com
@@ -82,9 +85,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
-                style={{ color: "var(--muted-foreground)" }}
+                style={{ color: 'var(--muted-foreground)' }}
               >
-                <ExternalLink size={14} />
+                <ExternalLink size={14} className="text-[#0a66c2]" />
                 Facebook
               </a>
               <a
@@ -92,9 +95,11 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-black"
-                style={{ color: "var(--muted-foreground)" }}
+                style={{ color: 'var(--muted-foreground)' }}
               >
-                <span className="font-black text-xs w-3.5 text-center">L</span>
+                <span className="font-black text-xs w-3.5 text-center text-[#00b900]">
+                  L
+                </span>
                 LINE Official
               </a>
             </div>
@@ -103,12 +108,12 @@ export default function Footer() {
 
         <div
           className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-3"
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: 'var(--border)' }}
         >
-          <p className="text-xs" style={{ color: "var(--muted-foreground)" }}>
+          <p className="text-xs" style={{ color: 'var(--muted-foreground)' }}>
             {t.footer.copy}
           </p>
-          <p className="text-xs" style={{ color: "var(--muted-foreground)" }}>
+          <p className="text-xs" style={{ color: 'var(--muted-foreground)' }}>
             meritacctax.com
           </p>
         </div>

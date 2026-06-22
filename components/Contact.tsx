@@ -154,7 +154,7 @@ export default function Contact() {
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1.5">
                   {t.contact.form.message}
-                  <span className="text-black ml-0.5">*</span>
+                  <span className="ml-0.5 text-red-600">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -164,22 +164,19 @@ export default function Contact() {
                   placeholder={t.contact.form.placeholder.message}
                   className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black resize-none"
                   style={{
-                    borderColor: errors.message ? "#000" : "var(--border)",
+                    borderColor: errors.message ? "rgb(220 38 38)" : "var(--border)",
                     background: "var(--background)",
                   }}
                 />
               </div>
 
               {status === "success" && (
-                <p className="text-sm p-3 rounded-lg bg-black text-white">
+                <p className="text-sm p-3 rounded-lg border bg-green-50 text-green-800 border-green-200">
                   {t.contact.form.successMsg}
                 </p>
               )}
               {status === "error" && (
-                <p
-                  className="text-sm p-3 rounded-lg border"
-                  style={{ borderColor: "var(--border)", color: "var(--muted-foreground)" }}
-                >
+                <p className="text-sm p-3 rounded-lg border bg-red-50 text-red-800 border-red-200">
                   {t.contact.form.errorMsg}
                 </p>
               )}
@@ -231,7 +228,7 @@ export default function Contact() {
                   </a>
                 </InfoRow>
 
-                <InfoRow icon={<span className="font-black text-xs">L</span>}>
+                <InfoRow icon={<span className="font-black text-xs text-[#00b900]">L</span>}>
                   <a
                     href="https://lin.ee/cNEUD0p"
                     target="_blank"
@@ -287,10 +284,10 @@ export default function Contact() {
               style={{ borderColor: "var(--border)" }}
             >
               <iframe
-                src="https://maps.app.goo.gl/yHS32fomPiqmXcX99"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d576.4278531485197!2d100.76108487919717!3d13.613361141154034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5d6fb7290a79%3A0x3b6fd916958cb6be!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4oeC4reC4o-C4tOC4lyDguYHguK3guIQg4LmB4LiX4LiB4LiL4LmMIOC4iOC4s-C4geC4seC4lA!5e0!3m2!1sth!2sth!4v1782122348191!5m2!1sth!2sth"
                 width="100%"
                 height="240"
-                style={{ border: 0, filter: "grayscale(100%)" }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -327,7 +324,7 @@ function Field({
     <div>
       <label htmlFor={id} className="block text-sm font-medium mb-1.5">
         {label}
-        {required && <span className="text-black ml-0.5">*</span>}
+        {required && <span className="ml-0.5 text-red-600">*</span>}
       </label>
       <input
         id={id}
@@ -337,7 +334,7 @@ function Field({
         placeholder={placeholder}
         className="w-full px-4 py-3 rounded-lg border text-base outline-none transition-all duration-150 focus:border-black min-h-[44px]"
         style={{
-          borderColor: error ? "#000" : "var(--border)",
+          borderColor: error ? "rgb(220 38 38)" : "var(--border)",
           background: "var(--background)",
         }}
       />

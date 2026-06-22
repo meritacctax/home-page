@@ -38,7 +38,7 @@ export default function FloatingButtons() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-2 px-4 py-3 rounded-full bg-black text-white text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl"
+            className="flex items-center gap-2 px-4 py-3 rounded-full bg-[#00b900] text-white text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl"
             aria-label="Contact via LINE"
           >
             <span className="font-bold text-xs">LINE</span>

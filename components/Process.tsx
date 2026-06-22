@@ -46,8 +46,8 @@ export default function Process() {
                 style={{ border: "1px solid var(--border)" }}
               >
                 <span
-                  className="text-4xl font-bold mb-4 block"
-                  style={{ color: "var(--border)", letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums" }}
+                  className="text-4xl font-bold mb-4 block text-gray-300"
+                  style={{ letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums" }}
                 >
                   {step.num}
                 </span>
