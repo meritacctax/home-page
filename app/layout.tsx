@@ -52,21 +52,12 @@ export const metadata: Metadata = {
     description:
       "รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
     url: "https://meritacctax.com",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 2500,
-        height: 1266,
-        alt: "MERIT ACC TAX สำนักงานบัญชีครบวงจร",
-      },
-    ],
     locale: "th_TH",
   },
   twitter: {
     card: "summary_large_image",
     title: "เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว",
     description: "สำนักงานบัญชีครบวงจร ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
-    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "/",
@@ -85,9 +76,6 @@ export default function RootLayout({
   return (
     <html lang="th" className={`${inter.variable} ${ibmPlexThai.variable}`}>
       <head>
-        <link rel="alternate" hrefLang="th" href="https://meritacctax.com" />
-        <link rel="alternate" hrefLang="en" href="https://meritacctax.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://meritacctax.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
