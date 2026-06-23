@@ -20,6 +20,14 @@ const ibmPlexThai = IBM_Plex_Sans_Thai({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meritacctax.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
   title: {
     default: "เมอริท แอค แทกซ์ | รับทำบัญชี ปิดงบ ตรวจสอบบัญชี สมุทรปราการ",
     template: "%s | MERIT ACC TAX",
