@@ -114,7 +114,7 @@ export default function Footer() {
             {t.footer.copy}
           </p>
           <p className="text-xs" style={{ color: 'var(--muted-foreground)' }}>
-            meritacctax.com
+            www.meritacctax.com
           </p>
         </div>
       </div>

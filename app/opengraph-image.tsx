@@ -45,7 +45,7 @@ export default function OGImage() {
               color: "#666666",
             }}
           >
-            meritacctax.com
+            www.meritacctax.com
           </div>
         </div>
 

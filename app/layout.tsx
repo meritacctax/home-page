@@ -19,7 +19,7 @@ const ibmPlexThai = IBM_Plex_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://meritacctax.com"),
+  metadataBase: new URL("https://www.meritacctax.com"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว",
     description:
       "รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
-    url: "https://meritacctax.com",
+    url: "https://www.meritacctax.com",
     locale: "th_TH",
   },
   twitter: {
@@ -84,8 +84,8 @@ export default function RootLayout({
               "@type": "AccountingService",
               name: "บริษัท เมอริท แอค แทกซ์ จำกัด",
               alternateName: "MERIT ACC TAX",
-              image: "https://meritacctax.com/og-image.png",
-              url: "https://meritacctax.com",
+              image: "https://www.meritacctax.com/og-image.png",
+              url: "https://www.meritacctax.com",
               telephone: "+66824989442",
               email: "merit.acctax@gmail.com",
               priceRange: "$$",
@@ -123,8 +123,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "บริษัท เมอริท แอค แทกซ์ จำกัด",
               alternateName: "MERIT ACC TAX",
-              url: "https://meritacctax.com",
-              logo: "https://meritacctax.com/og-image.png",
+              url: "https://www.meritacctax.com",
+              logo: "https://www.meritacctax.com/og-image.png",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
