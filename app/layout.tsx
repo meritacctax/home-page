@@ -1,66 +1,67 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { IBM_Plex_Sans_Thai } from "next/font/google";
-import "./globals.css";
-import { I18nProvider } from "@/lib/i18n/context";
-import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { IBM_Plex_Sans_Thai } from 'next/font/google';
+import './globals.css';
+import { I18nProvider } from '@/lib/i18n/context';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 const ibmPlexThai = IBM_Plex_Sans_Thai({
-  variable: "--font-ibm-plex-thai",
-  subsets: ["thai", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
+  variable: '--font-ibm-plex-thai',
+  subsets: ['thai', 'latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.meritacctax.com"),
+  metadataBase: new URL('https://www.meritacctax.com'),
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png" },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/icon.png",
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
   },
   title: {
-    default: "เมอริท แอค แทกซ์ | รับทำบัญชี ปิดงบ ตรวจสอบบัญชี สมุทรปราการ",
-    template: "%s | MERIT ACC TAX",
+    default: 'เมอริท แอค แทกซ์ | รับทำบัญชี สมุทรปราการ',
+    template: '%s | MERIT ACC TAX',
   },
   description:
-    "สำนักงานบัญชีครบวงจร รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
+    'สำนักงานบัญชีครบวงจร รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี',
   keywords: [
-    "รับทำบัญชี",
-    "สำนักงานบัญชีบางพลี",
-    "สำนักงานบัญชีสมุทรปราการ",
-    "ปิดงบการเงิน",
-    "ตรวจสอบบัญชี",
-    "จดทะเบียนบริษัท",
-    "ยื่นภาษี",
-    "วางระบบบัญชี",
+    'รับทำบัญชี',
+    'สำนักงานบัญชีบางพลี',
+    'สำนักงานบัญชีสมุทรปราการ',
+    'ปิดงบการเงิน',
+    'ตรวจสอบบัญชี',
+    'จดทะเบียนบริษัท',
+    'ยื่นภาษี',
+    'วางระบบบัญชี',
   ],
-  authors: [{ name: "MERIT ACC TAX" }],
+  authors: [{ name: 'MERIT ACC TAX' }],
   openGraph: {
-    type: "website",
-    siteName: "MERIT ACC TAX",
-    title: "เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว",
+    type: 'website',
+    siteName: 'เมอริท แอค แทกซ์',
+    title: 'เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว',
     description:
-      "รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
-    url: "https://www.meritacctax.com",
-    locale: "th_TH",
+      'รับทำบัญชี วางระบบ ปิดงบ ตรวจสอบบัญชี ยื่นภาษี จดทะเบียนบริษัท ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี',
+    url: 'https://www.meritacctax.com',
+    locale: 'th_TH',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว",
-    description: "สำนักงานบัญชีครบวงจร ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี",
+    card: 'summary_large_image',
+    title: 'เมอริท แอค แทกซ์ | บัญชี ภาษี ครบจบในที่เดียว',
+    description:
+      'สำนักงานบัญชีครบวงจร ทีมงานมืออาชีพ ประสบการณ์กว่า 10 ปี ปรึกษาฟรี',
   },
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   robots: {
     index: true,
@@ -75,74 +76,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th" className={`${inter.variable} ${ibmPlexThai.variable}`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "AccountingService",
-              name: "บริษัท เมอริท แอค แทกซ์ จำกัด",
-              alternateName: "MERIT ACC TAX",
-              image: "https://www.meritacctax.com/og-image.png",
-              url: "https://www.meritacctax.com",
-              telephone: "+66824989442",
-              email: "merit.acctax@gmail.com",
-              priceRange: "$$",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "87/8 หมู่ที่ 7 ตำบลบางโฉลง อำเภอบางพลี",
-                addressLocality: "บางพลี",
-                addressRegion: "สมุทรปราการ",
-                postalCode: "10540",
-                addressCountry: "TH",
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
-                  opens: "09:00",
-                  closes: "18:00",
-                },
-              ],
-              sameAs: ["https://web.facebook.com/meritacctax"],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "บริษัท เมอริท แอค แทกซ์ จำกัด",
-              alternateName: "MERIT ACC TAX",
-              url: "https://www.meritacctax.com",
-              logo: "https://www.meritacctax.com/og-image.png",
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+66824989442",
-                  contactType: "customer service",
-                  availableLanguage: ["Thai", "English"],
-                },
-              ],
-              sameAs: ["https://web.facebook.com/meritacctax"],
-            }),
-          }}
-        />
-      </head>
+      <head />
       <body
         className="min-h-screen"
         style={{
           fontFamily:
-            "var(--font-ibm-plex-thai), var(--font-inter), sans-serif",
+            'var(--font-ibm-plex-thai), var(--font-inter), sans-serif',
         }}
       >
         <I18nProvider>{children}</I18nProvider>

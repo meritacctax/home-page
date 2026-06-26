@@ -9,10 +9,18 @@ import CTABand from "@/components/CTABand";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import { websiteJsonLd, businessJsonLd } from "@/lib/seo/structured-data";
 
 export default function Home() {
   return (
     <>
+      {[websiteJsonLd, businessJsonLd].map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Navbar />
       <main>
         <Hero />
